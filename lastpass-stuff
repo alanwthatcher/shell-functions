@@ -1,0 +1,16 @@
+### LastPass Functions ###
+# - for both functions, provide identifier for password as argument
+#   - pass-copypasswd mysite.com (password value copied to system clipboard)
+#   - pass-showpass mysite.com (password shown on terminal)
+
+function pass-copypasswd {
+  lpass login <your.username@somewhere.com>
+  lpass show -c --password ${1}
+  lpass logout -f
+}
+
+function pass-showpass {
+  lpass login alanwthatcher@gmail.com
+  lpass show --password {1}
+  lpass logout -f
+}
